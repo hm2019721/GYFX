@@ -2,7 +2,7 @@
 
 >为防止爬虫
 
-- tg代理
+- tg: https://t.me/hm2019721
 1.
 ----------
 
@@ -10,8 +10,9 @@
 ## Telegram节点
 
 ```
-https://t.me/proxy?server=192.3.1.199&port=443&secret=ee100000000000000000000000000000016e6f64656a732e6f7267
-https://t.me/proxy?server=173.82.154.129&port=443&secret=ee100000000000000000000000000000016e6f64656a732e6f7267
+
+https://t.me/proxy?server=47.56.139.25&port=443&secret=ee558d70d5a06f6d12cdcd6a0573c996797777772e636c6f7564666c6172652e636f6d
+
 ```
 -------
 
