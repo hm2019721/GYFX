@@ -1,18 +1,17 @@
-# Loon全局配置
-# TG通知频道 (https://t.me/hm2019721)
+# Loon全局配置 
+# YouTube去广告请删除hostname 后的.bak
 
 [General]
 ipv6 = false
-skip-proxy = 10.0.0.0/8,127.0.0.0/8,169.254.0.0/16,192.0.2.0/24,192.168.0.0/16,198.51.100.0/24,224.0.0.0/4,*.local,localhostlocal
-bypass-tun = 10.0.0.0/8,127.0.0.0/8,169.254.0.0/16,192.0.2.0/24,192.168.0.0/16,198.51.100.0/24,224.0.0.0/4
+skip-proxy = 10.0.0.0/8,127.0.0.0/8,169.254.0.0/16,192.0.2.0/24,192.168.0.0/16,198.51.100.0/24,224.0.0.0/4,172.16.0.0/12,100.64.0.0/10,*.local,e.crashlytics.com,captive.apple.com
+bypass-tun = 10.0.0.0/8,127.0.0.0/8,169.254.0.0/16,192.0.2.0/24,192.168.0.0/16,198.51.100.0/24,224.0.0.0/4,172.16.0.0/12,100.64.0.0/10
+
 # [DNS] => DNS 服务器
 dns-server = system,1.2.4.8,119.29.29.29,223.5.5.5
 allow-udp-proxy = true
 host = 127.0.0.1
 
 [Remote Proxy]
-
-
 # 订阅节点
 # 别名 = 订阅URL
 
@@ -43,16 +42,15 @@ host = 127.0.0.1
 
 # 节点选项
 # select模式,手动选择模式
-🔰节点选择 = select,♻️自动选择,⚠️故障切换,
+🔰节点选择 = select,♻️自动选择,🟢健康检测
 
-♻️自动选择 = url-test,,url = http://www.qualcomm.cn/generate_204,interval = 600
+♻️自动选择 = url-test,,url = http://www.qualcomm.cn/generate_204,interval = 150
+🟢健康检测 = fallback,,url = http://www.qualcomm.cn/generate_204,interval = 60
 
 # url-test模式，给提供的url发出http header请求，根据返回结果，选择测速最快的节点，默认间隔600s，测速超时时间5s，为了避免资源浪费，建议节点数不要过多，只支持单个节点和远端节点，其他会被忽略
 
 # fallback模式，和url-test类似，不同的是会根据顺序返回第一个可用的节点，为了避免资源浪费，建议节点数不要过多，只支持单个节点和远端节点，其他会被忽略
-
-🎬国内媒体 = select,DIRECT
-🎵国际抖音 = select,🔰节点选择,🎯国内直连
+🔘网络识别 = ssid,default = 🔰节点选择, cellular = DIRECT
 🎬国际媒体 = select,🔰节点选择,🎯国内直连
 💳贝宝支付 = select,🔰节点选择,🎯国内直连
 📱电报吹水 = select,🔰节点选择,🎯国内直连
@@ -60,20 +58,19 @@ host = 127.0.0.1
 # 网络测速
 🚀网络测速 = select,🔰节点选择,🎯国内直连
 # 苹果服务
-🍎苹果服务 = select,🎯国内直连
+🍎苹果服务 = select,🎯国内直连,🔰节点选择
 # 直接连接
 🎯国内直连 = select,DIRECT
 # 广告拦截
 🚫广告与屏蔽 = select,⛔️拦截,🎯国内直连
 # 白名单模式 PROXY，黑名单模式 DIRECT
-🕹黑白名单 = select,🎯国内直连,🔰节点选择
+🕹黑白名单 = select,🔰节点选择,🎯国内直连
 # 拦截
 ⛔️拦截 = select,REJECT
 
 # SSID
 # 别名 = ssid，默认 = 策略， 蜂窝 = 策略， ssid名称 = 策略
-#SSID = ssid, default = PROXY, cellular = DIRECT, ”wifi名字“ = PROXY
-
+#SSID = ssid, default = PROXY, cellular = DIRECT, ”DivineEngine“ = PROXY
 
 
 [Rule]
@@ -91,41 +88,31 @@ FINAL,🕹黑白名单
 
 [Remote Rule]
 
-# 订阅规则
+# 订阅规则⬇️
 https://raw.githubusercontent.com/eHpo1/Rules/master/Surge4/Ruleset/Liby.list, policy=🚫广告与屏蔽, tag=去广告, enabled=true
-https://raw.githubusercontent.com/nzw9314/Surge/master/Ruleset/Tide.list, policy=🚫广告与屏蔽, tag=去广告, enabled=true
-# BlockOTA屏蔽系统更新
+# BlockOTA屏蔽系统更新⬇️
 https://raw.githubusercontent.com/nzw9314/Surge/master/Ruleset/BlockOTA.list, policy=🚫广告与屏蔽, tag=ios屏蔽更新, enabled=true
-# Antirevoke无视证书失效
+# Antirevoke无视证书失效⬇️
 https://raw.githubusercontent.com/nzw9314/Surge/master/Ruleset/Antirevoke.list, policy=🚫广告与屏蔽, tag=无视证书失效, enabled=true
-
-# 国内媒体分组，如需为某个规则列表单独设置策略，请直接修改最后的策略名称
-https://raw.githubusercontent.com/lhie1/Rules/master/Surge/Surge%203/Provider/Media/Netease%20Music.list, policy=🎬国内媒体, tag=Netease%20Music, enabled=true
-https://raw.githubusercontent.com/lhie1/Rules/master/Surge/Surge%203/Provider/Media/Bilibili.list, policy=🎬国内媒体, tag=Bilibili, enabled=true
-https://raw.githubusercontent.com/lhie1/Rules/master/Surge/Surge%203/Provider/Media/iQiyi.list, policy=🎬国内媒体, tag=iQiyi, enabled=true
-https://raw.githubusercontent.com/lhie1/Rules/master/Surge/Surge%203/Provider/Media/Letv.list, policy=🎬国内媒体, tag=Letv, enabled=true
-https://raw.githubusercontent.com/lhie1/Rules/master/Surge/Surge%203/Provider/Media/MOO.list, policy=🎬国内媒体, tag=MOO, enabled=true
-https://raw.githubusercontent.com/lhie1/Rules/master/Surge/Surge%203/Provider/Media/Tencent%20Video.list, policy=🎬国内媒体, tag=Tencent%20Video, enabled=true
-https://raw.githubusercontent.com/lhie1/Rules/master/Surge/Surge%203/Provider/Media/Youku.list, policy=🎬国内媒体, tag=Youku, enabled=true
-# > TikTok
+# > TikTok ⬇️
 https://raw.githubusercontent.com/nzw9314/Surge/master/Ruleset/TikTok.list, policy=🎵国际抖音, tag=Tiktok, enabled=true
-# > Youtube
+# > Youtube ⬇️
 https://raw.githubusercontent.com/eHpo1/Rules/master/Surge4/Ruleset/Sub/YouTube.list, policy=🎬国际媒体, tag=油管, enabled=true
-# > Netflix
+# > Netflix ⬇️
 https://raw.githubusercontent.com/eHpo1/Rules/master/Surge4/Ruleset/Sub/Netflix.list, policy=🎬国际媒体, tag=奈飞, enabled=true
-# > PronHub
+# > PronHub ⬇️
 https://raw.githubusercontent.com/eHpo1/Rules/master/Surge4/Ruleset/Sub/Pornhub.list, policy=🔞珀恩哈波, tag=P站, enabled=true
-# Telegram
+# Telegram ⬇️
 https://raw.githubusercontent.com/eHpo1/Rules/master/Surge4/Ruleset/Sub/Telegram.list, policy=📱电报吹水, tag=电报, enabled=true
-# > PayPal
+# > PayPal ⬇️
 https://raw.githubusercontent.com/eHpo1/Rules/master/Surge4/Ruleset/Sub/PayPal.list, policy=💳贝宝支付, tag=贝宝, enabled=true
-# > Outlook、Gmail
+# > Outlook、Gmail ⬇️
 https://raw.githubusercontent.com/nzw9314/Surge/master/Ruleset/Mail.list, policy=🔰节点选择, tag=节点选择, enabled=true
-# > GoogleDrive
+# > GoogleDrive ⬇️
 https://raw.githubusercontent.com/nzw9314/Surge/master/Ruleset/GoogleDrive.list, policy=🔰节点选择, tag=节点选择, enabled=true
-# Speedtest
+# Speedtest ⬇️
 https://raw.githubusercontent.com/lhie1/Rules/master/Surge/Surge%203/Provider/Speedtest.list, policy=🚀网络测速, tag=测速, enabled=true
-
+# 苹果服务⬇️
 https://raw.githubusercontent.com/eHpo1/Rules/master/Surge4/Ruleset/Apple_CDN.list, policy=🍎苹果服务, tag=苹果服务, enabled=true
 https://raw.githubusercontent.com/eHpo1/Rules/master/Surge4/Ruleset/Apple_API.list, policy=🍎苹果服务, tag=苹果服务, enabled=true
 
@@ -173,13 +160,15 @@ cron "05 0 0 * * *" script-path=https://raw.githubusercontent.com/NobyDa/Script/
 # 中国联通
 #1打开 APP , 进入签到页面, 系统提示: `获取刷新链接: 成功`,然后手动签到 1 次
 #2首页>天天抽奖, 系统提示 `2` 次: `获取Cookie: 成功 (登录抽奖)` 和 `获取Cookie: 成功 (抽奖次数)`
-cron "20 0 0 * * *" script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/10010/10010.js, tag=中国联通
+cron "30 0 0 * * *" script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/10010/10010.js, tag=中国联通
 
 
 # 快手极速版 (By @Macsuny)
 #APP登陆账号后，点击’钱包‘
-cron "30 0 0 * * *" script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/kuaishou.js, tag=快手极速版
+cron "50 0 0 * * *" script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/kuaishou.js, tag=快手极速版
 
+# > 一言
+cron "0 0 8 * * *" script-path=https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Meeta/Surge/Scripting/Calendar.js, tag=一言+历史上的今天
 
 # > 倒数日
 # 需要自己修改节日
