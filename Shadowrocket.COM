@@ -1,6 +1,5 @@
-# Best Shadowrocket Rules (https://github.com/h2y/Shadowrocket-ADBlock-Rules)
-# by Moshel
-# build time: 2020-05-27 09:50:55
+# 更新通知频道(TG • https://t.me/hm2019721)
+# build time: 2020-06-10 04:53:00
 
 [General]
 bypass-system = true
