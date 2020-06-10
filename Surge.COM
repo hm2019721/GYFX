@@ -1,3 +1,6 @@
+# 更新通知频道(TG • https://t.me/hm2019721)
+# build time: 2020-06-10 04:53:00
+
 [General]
 # 日志等级 warning, notify, info, verbose (默认: notify)
 loglevel = notify
