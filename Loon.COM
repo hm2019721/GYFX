@@ -1,5 +1,6 @@
 # Loon全局配置 
-# 电报频道: https://t.me/hm2019721
+# 更新通知频道(TG • https://t.me/hm2019721)
+# build time: 2020-06-10 04:53:00
 # YouTube去广告请删除hostname 后的.bak
 
 [General]
