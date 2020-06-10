@@ -91,7 +91,7 @@ FINAL,🕹黑白名单
 [Remote Rule]
 
 # 订阅规则⬇️
-https://raw.githubusercontent.com/eHpo1/Rules/master/Surge4/Ruleset/Liby.list, policy=🚫广告与屏蔽, tag=去广告, enabled=true
+https://raw.githubusercontent.com/hm2019721/GYFX-ZY/master/Loon-QGG.com, policy=🚫广告与屏蔽, tag=去广告与运营商屏蔽, enabled=tru
 # BlockOTA屏蔽系统更新⬇️
 https://raw.githubusercontent.com/nzw9314/Surge/master/Ruleset/BlockOTA.list, policy=🚫广告与屏蔽, tag=ios屏蔽更新, enabled=true
 # Antirevoke无视证书失效⬇️
