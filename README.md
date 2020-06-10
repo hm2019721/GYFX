@@ -18,7 +18,7 @@ https://t.me/proxy?server=198.13.50.113&port=443&secret=7mYr98PhgTQY3v/Q/Z/Omt1p
 https://t.me/proxy?server=23.98.64.197&port=443&secret=7gAAAAAAAAAAAAAAAAAAAAF3d3cuYmluZy5jb20
 
 
-##节点测速链接
+## 节点测速链接
 
 
 http://cp.cloudflare.com/generate_204
