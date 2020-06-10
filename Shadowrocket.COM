@@ -8141,5 +8141,3 @@ FINAL,proxy
 
 [URL Rewrite]
 ^http://(www.)?google.cn https://www.google.com 302
-
-# By Moshel @ https://hzy.pw/
