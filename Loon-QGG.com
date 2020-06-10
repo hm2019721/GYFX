@@ -8272,9 +8272,3 @@ DOMAIN-SUFFIX,zzsno1.com,Reject
 DOMAIN-SUFFIX,zzsssy.com,Reject
 DOMAIN-SUFFIX,zzwflxs.com,Reject
 DOMAIN-SUFFIX,zzyonghao.com,Reject
-
-
-FINAL,proxy
-
-[URL Rewrite]
-^http://(www.)?google.cn https://www.google.com 302
