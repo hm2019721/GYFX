@@ -1,6 +1,3 @@
-# 更新通知频道(TG • https://t.me/hm2019721)
-# build time: 2020-06-10 04:53:00
-
 # Liby.list
 # Internet Service Providers Hijacking 运营商劫持
 DOMAIN-SUFFIX,17gouwuba.com
