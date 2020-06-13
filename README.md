@@ -28,4 +28,6 @@ http://cp.cloudflare.com/generate_204
 
 http://www.gstatic.com/generate_204
 
-用-http://www.qualcomm.cn/generate_204
+http://www.qualcomm.cn/generate_204
+
+http://captive.apple.com/
