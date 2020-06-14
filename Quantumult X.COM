@@ -54,25 +54,26 @@ server=/*.xiaomi.com/119.29.29.29
 
 ;round-robin=负载均衡
 
-static=🌏 国外网站, proxy, direct
+static=🌏 国外网站, proxy, direct, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Global.png
 
-static=💻 国外影视, proxy, direct
+static=💻 国外影视, proxy, direct, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/GlobalMedia.png
 
-static=📱 Telegram, proxy, direct
+static=📱 Telegram, proxy, direct, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Telegram.png
 
-static=🎬 YouTube, proxy, direct
+static=🎬 YouTube, proxy, direct, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/YouTube.png
 
-static=🎵 TikTok, proxy, direct
+static=🎵 TikTok, proxy, direct, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Tiktok.png
 
-static=🍎 苹果服务, direct, proxy
+static=🍎 苹果服务, direct, proxy, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Apple.png
 
-static=📺 Netflix, proxy, direct
+static=📺 Netflix, proxy, direct, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Netflix.png
 
-static=🇨🇳 回国, direct, proxy
+static=🇨🇳 回国, direct, proxy, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/BacktoCN.png
 
-static=🎸解锁网易云音乐, direct, 🎧 解锁网易云音乐
+static=🎸 解锁网易云音乐, direct, 🎧 解锁网易云音乐, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Netease.png
 
-static=🚫屏蔽系统更新, reject, direct
+static=🚫 屏蔽系统更新, reject, direct, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/reject.png
+
 
 [server_remote]
 #节点订阅
