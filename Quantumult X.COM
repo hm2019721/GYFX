@@ -1,5 +1,5 @@
 # 更新通知频道(TG • https://t.me/hm2019721)
-# build time: 2020-06-10 04:53:00
+# build time: 2020-06-14 11:40:00
 #如果是YouTube Premium请删掉googlevideo主机名，否则无法加载视频
 #如不需要淘宝比价请删掉taobao主机名
 
