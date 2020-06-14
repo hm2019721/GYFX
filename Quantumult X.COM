@@ -534,7 +534,14 @@ http=106.52.127.72:19951, fast-open=false, udp-relay=false, tag=🎧 解锁网�
 0 8 * * * https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Task/jd_pet.js, tag=京东萌宠, enabled=true
 
 [rewrite_local]
-#本地脚本
+#本地复写
+#默认印度
+# 美区 Tiktok 1470 解锁
+(.*video_id=\w{32})(.*watermark=)(.*) url 302 $1
+
+(?<=(carrier|sys)_region=)CN url 307 IN
+
+(?<=version_code=)\d{1,}.\d{1}\.\d{1} url 307 14.0.0
 
 
 [filter_local]
@@ -578,4 +585,4 @@ p12 = MIIK3wIBAzCCCqkGCSqGSIb3DQEHAaCCCpoEggqWMIIKkjCCBN8GCSqGSIb3DQEHBqCCBNAwgg
 ;skip_validating_cert = false
 ;force_sni_domain_name = false
 ;empty_sni_enabled = false
-;hostname = *.example.com, *.sample.com
+hostname = *.example.com, *.sample.com , *.musical.ly, *.tiktokv.com,*.tiktokcdn.com, api*.amemv.com, aweme*.snssdk.com
