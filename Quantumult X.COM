@@ -486,8 +486,8 @@ http=106.52.127.72:19951, fast-open=false, udp-relay=false, tag=🎧 解锁网�
 6 0 * * * https://raw.githubusercontent.com/Sunert/Scripts/master/Task/weibo.js
 
 # > 新浪新闻 (By @Macsuny)
-1.打开app,点击”我的“=>”签到“，获取第一个Cookie，通知获取信息成功
-2.在未签到情况下，先禁用第一条Cookie链接，然后再次进入签到，通知获取签到Cookie成功
+#1.打开app,点击”我的“=>”签到“，获取第一个Cookie，通知获取信息成功
+#2.在未签到情况下，先禁用第一条Cookie链接，然后再次进入签到，通知获取签到Cookie成功
 6 0 * * * https://raw.githubusercontent.com/Sunert/Scripts/master/Task/sinanews.js
 
 # > 中青看点极速版 (By @Macsuny)
