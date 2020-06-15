@@ -359,7 +359,7 @@ http=106.52.127.72:19951, fast-open=false, udp-relay=false, tag=🎧 解锁网�
 13 0 * * * https://raw.githubusercontent.com/chavyleung/scripts/master/midu/miduSign.js
 
 # 多看
-`我的` > `签到任务` 等到提示获取 Cookie 成功即可
+#`我的` > `签到任务` 等到提示获取 Cookie 成功即可
 13 0 * * * https://raw.githubusercontent.com/chavyleung/scripts/master/duokan/duokan.js
 
 # 京东618
