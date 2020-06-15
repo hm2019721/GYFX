@@ -554,8 +554,8 @@ http=106.52.127.72:19951, fast-open=false, udp-relay=false, tag=🎧 解锁网�
 host, ocsp.apple.com, reject
 
 #屏蔽系统更新
-host, mesu.apple.com, 🚫屏蔽系统更新
-host, gdmf.apple.com, 🚫屏蔽系统更新
+host, mesu.apple.com, 🚫 屏蔽系统更新
+host, gdmf.apple.com, 🚫 屏蔽系统更新
 
 #迅雷版权问题
 host, hub5idx.v6.shub.sandai.net, reject
