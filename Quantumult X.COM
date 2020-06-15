@@ -126,10 +126,8 @@ http=106.52.127.72:19951, fast-open=false, udp-relay=false, tag=🎧 解锁网�
 # 定时脚本Task_Remote.conf
 # QX目前无法订阅Task
 # (按需求修改时间)
-需要修改的或填key的使用本地路径
-无需修改的使用远程资源
-# 定时脚本
-;* * * * * sample-task.js
+#需要修改的或填key的使用本地路径
+#无需修改的使用远程资源
 
 # 一言
 0 8 * * * https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Meeta/Surge/Scripting/Calendar.js
