@@ -117,10 +117,8 @@ https://raw.githubusercontent.com/eHpo1/Rules/master/Surge4/Ruleset/Global.list,
 
 #rewrite 复写远程订阅
 [rewrite_remote]
-https://raw.githubusercontent.com/hm2019721/GYFX-ZY/master/Q~qga.txt, tag=自己编辑去广告N, update-interval=86400, opt-parser=false, enabled=false
 https://raw.githubusercontent.com/eHpo1/Rules/master/QuantumultX/Rewrite.txt, tag=eHpo1去广告, update-interval=86400, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Q-Search_All_in_one.conf, tag=Q-Search, update-interval=86400, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/hm2019721/GYFX-ZY/master/Q~C.txt, tag=自己添加Cookie, update-interval=86400, opt-parser=true, enabled=false
 https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Js.conf, tag=nzw9314脚本, update-interval=86400, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Get_Cookie_Remote.conf, tag=商店1.06获取Cookie(右滑禁用), update-interval=86400, opt-parser=false, enabled=false
 
