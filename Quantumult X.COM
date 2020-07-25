@@ -1,42 +1,17 @@
-;适用版本1.0.10以上
-;感谢nzw9314\eHpo1\ACL4SSR\Peng-YM\契阔 等等大神们，懒人配置 by Mazetsz
-;导入配置后，直接修改「默认机场」订阅里的链接即可。
-;更新节点（网易云订阅需要挂上节点才能更新），更新规则，即可畅游外网。
-;
-;关于脚本问题：
-;  1.缓存脚本（UI:复写规则里，看见显示未缓存的全都手动点一下右边的小按钮-更新脚本）
-;  2.缓存任务脚本（UI：构造请求，一个个缓存）后即可使用。
-;
-;网易云解锁，带远程节点（定时更新公益节点），以匹配相应网易云规则
-;  1.策略🎧𝐍𝐞𝐭𝐞𝐚𝐬𝐞𝐌𝐮𝐬𝐢𝐜为解锁开关（图标是网易云右下带一个小锁），默认直连，切换到🎧𝐍𝐞𝐭𝐞𝐚𝐬𝐞即为解锁状态。
-;  2.策略🎧𝐍𝐞𝐭𝐞𝐚𝐬𝐞用于自动筛选解锁节点，后续对于自建的解锁节点，名字带有（music|𝐌𝐮𝐬𝐢𝐜|Unbolck|云音乐）这些的会自动筛选到策略中。
-;  3.证书链接：https://cdn.jsdelivr.net/gh/nondanee/UnblockNeteaseMusic@master/ca.crt
-;  4.下载证书，进入「设置」>「通用」>「描述文件」，安装「UnblockNeteaseMusic Root CA」，并在「设置」>「通用」>「关于本机」>「证书信任设置」开启对「UnblockNeteaseMusic Root CA」的信任。
-;
-;𝐀𝐬𝐢𝐚𝐧𝐌𝐞𝐝𝐢𝐚策略为解锁B站地区，默认直连，切换为HKMT策略即为解锁模式。针对不同地区解锁，请在HKMT策略组切换（台湾or香港）
-;Youtube去广告，如果是YouTube Premium请在「hostname」里删掉googlevideo主机名，否则无法加载视频。
-;如不需要淘宝比价请删掉taobao主机名,更新脚本后，发现淘宝比价失效，请重装淘宝。
-;
-;最后提醒：要正常使用，请务必一定要缓存，复写里的缓存，构造请求里的缓存。麻烦都缓存！缓存！缓存！缓存！缓存！缓存！
-;不要出现问题后，直接在群中问，建议耐心排查，一般就是策略状态有问题，在软件UI（那个向下劈叉的箭头），可看见策略状态，看看是否节点没匹配好。
-
+#本期更新时间2020-7-25
+#唯一频道https://t.me/hm2019721
 ;general 模块内为一些通用的设置参数项
 [general]
 ;Quantumult X 会对 server_check_url 指定的网址进行相应测试，以确认节点的可用性
-;你同样可以在 server_local/remote 中，为节点、订阅单独指定server_check_url参数
-server_check_url= http://www.gstatic.com/generate_404
+server_check_url= http://www.gstatic.com/generate_204
 resource_parser_url= https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/resource-parser.js
 geo_location_checker=http://ip-api.com/json/?lang=zh-CN, https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/IP_API.js
 
 [dns]
 ;指定的 dns服务器
 server=114.114.114.114
-server=202.141.176.93 
-server=202.141.178.13
-server=117.50.10.10
-server=223.5.5.5
-server=119.29.29.29:53
-server=119.28.28.28
+server=119.29.29.29
+server=8.8.8.8
 ;指定域名解析dns
 server=/*.taobao.com/223.5.5.5
 server=/*.tmall.com/223.5.5.5
@@ -56,92 +31,65 @@ server=/*.127.net/119.29.29.29
 server=/*.netease.com/119.29.29.29
 server=/*.mi.com/119.29.29.29
 server=/*.xiaomi.com/119.29.29.29
-;server=/*testflight.apple.com/23.76.66.98
-;server=8.8.8.8
-;server=/example1.com/8.8.4.4
-;server=/*.example2.com/223.5.5.5
-;server=/example4.com/[2001:4860:4860::8888]:53
-;address=/example5.com/192.168.16.18
-;address=/example6.com/[2001:8d3:8d3:8d3:8d3:8d3:8d3:8d3]
 
 #以下为策略组[policy]部分
 # static 策略组中，你需要手动选择想要的节点/策略组。
 # available 策略组将按顺序选择你列表中第一个可用的节点。
 # round-robin 策略组，将按列表的顺序轮流使用其中的节点。
 # ssid 策略组，将根据你所设定的网络来自动切换节点/策略组
-;img-url 参数用于指定策略组图标，可远程，也可本地/iCloud(Quantumult X/Images路径下) （108*108 大小）
-;direct/proxy/reject 则只能用本地图标，名字分别为 direct.png, proxy.png,reject.png 放置于 Images 文件夹下即可生效 (108*108 大小)
 
 [policy]
-
 # 策略组
-
+#MERCURY_8B90:🔴负载均衡 ssid演示
 # 节点选项
-static=🕹𝐅𝐢𝐧𝐚𝐥, 🖲️𝐏𝐫𝐨𝐱𝐲, 🎯𝐃𝐢𝐫𝐞𝐜𝐭, img-url= https://raw.githubusercontent.com/Orz-3/mini/master/Final.png
-static=🖲️𝐏𝐫𝐨𝐱𝐲, ♻️𝐀𝐮𝐭𝐨, 🌀𝐒𝐞𝐥𝐞𝐜𝐭, 𝐈𝐏𝐋𝐂, 𝐈𝐄𝐏𝐋, img-url= https://raw.githubusercontent.com/Orz-3/mini/master/proxy.png
+#static=🖲️𝐏𝐫𝐨𝐱𝐲, 🔴负载均衡, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/proxy.png
+ssid=📱 SSID, 🔴负载均衡, 🔴负载均衡, img-url= https://raw.githubusercontent.com/Orz-3/mini/master/ssid.png
 
-available=♻️𝐀𝐮𝐭𝐨, resource-tag-regex=.*, img-url= https://raw.githubusercontent.com/Orz-3/mini/master/available.png
+round-robin=🔴负载均衡, 韩国>01-TG • https://t.me/hm2019721, 香港>09-TG • https://t.me/hm2019721, 香港>A-TG • https://t.me/hm2019721, 香港>B-TG • https://t.me/hm2019721, 香港>C-TG • https://t.me/hm2019721, 新加坡>01-TG • https://t.me/hm2019721, 新加坡>02-TG • https://t.me/hm2019721, 新加坡>03-TG • https://t.me/hm2019721, 俄罗斯>01-TG • https://t.me/hm2019721, 俄罗斯>02-TG • https://t.me/hm2019721, 美国>01-TG • https://t.me/hm2019721, 美国>02-TG • https://t.me/hm2019721, 美国>03-TG • https://t.me/hm2019721, 美国>04-TG • https://t.me/hm2019721, 美国>05-TG • https://t.me/hm2019721, 美国>06-TG • https://t.me/hm2019721, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/available.png
 
-static=🌀𝐒𝐞𝐥𝐞𝐜𝐭,proxy, 🇭🇰𝐇𝐊, 🇨🇳𝐓𝐖, 🇯🇵𝐉𝐏, 🇰🇷𝐊𝐑, 🇺🇸𝐔𝐒, 🇸🇬𝐒𝐆, img-url= https://raw.githubusercontent.com/Orz-3/mini/master/static.png
-static=🌏𝐀𝐬𝐢𝐚𝐧𝐌𝐞𝐝𝐢𝐚, 🖲️𝐏𝐫𝐨𝐱𝐲, 🎯𝐃𝐢𝐫𝐞𝐜𝐭,🔅𝐇𝐊𝐌𝐓, img-url= https://raw.githubusercontent.com/Orz-3/mini/master/GlobalMedia.png
-static=🎵𝐓𝐢𝐤𝐓𝐨𝐤, 🖲️𝐏𝐫𝐨𝐱𝐲, 🎯𝐃𝐢𝐫𝐞𝐜𝐭, img-url= https://raw.githubusercontent.com/Orz-3/mini/master/Tiktok.png
-static=🖥𝐍𝐞𝐭𝐟𝐥𝐢𝐱, 🖲️𝐏𝐫𝐨𝐱𝐲, 🎯𝐃𝐢𝐫𝐞𝐜𝐭, img-url= https://raw.githubusercontent.com/Orz-3/mini/master/Netflix.png
-static=💳𝐏𝐚𝐲𝐏𝐚𝐥, 🖲️𝐏𝐫𝐨𝐱𝐲, 🎯𝐃𝐢𝐫𝐞𝐜𝐭, img-url= https://raw.githubusercontent.com/Orz-3/mini/master/Paypal.png
-static=📱𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦, 🖲️𝐏𝐫𝐨𝐱𝐲, 🎯𝐃𝐢𝐫𝐞𝐜𝐭, img-url= https://raw.githubusercontent.com/Orz-3/mini/master/Telegram.png
-static=🎬𝐘𝐨𝐮𝐓𝐮𝐛𝐞, 🖲️𝐏𝐫𝐨𝐱𝐲, 🎯𝐃𝐢𝐫𝐞𝐜𝐭, img-url= https://raw.githubusercontent.com/Orz-3/mini/master/YouTube-W.png
-static=🔞𝐏𝐨𝐫𝐧𝐇𝐮𝐛, 🖲️𝐏𝐫𝐨𝐱𝐲, 🎯𝐃𝐢𝐫𝐞𝐜𝐭, img-url= https://raw.githubusercontent.com/Orz-3/mini/master/Pornhub.png
-static=🔅𝐇𝐊𝐌𝐓, 🇨🇳𝐓𝐖, 🇭🇰𝐇𝐊, 🎯𝐃𝐢𝐫𝐞𝐜𝐭, img-url= https://raw.githubusercontent.com/Orz-3/mini/master/HKMTMedia.png
+static=🌏国内视频, direct, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/StreamingCN.png
 
-# 🔓网易云音乐灰色歌曲,需要节点支持解锁
-static=🎧𝐍𝐞𝐭𝐞𝐚𝐬𝐞𝐌𝐮𝐬𝐢𝐜, 🎯𝐃𝐢𝐫𝐞𝐜𝐭, 🎧𝐍𝐞𝐭𝐞𝐚𝐬𝐞, img-url= https://raw.githubusercontent.com/Orz-3/mini/master/neteasemusic.png
-static=🎧𝐍𝐞𝐭𝐞𝐚𝐬𝐞, server-tag-regex=music|𝐌𝐮𝐬𝐢𝐜|Unbolck|云音乐, img-url= https://raw.githubusercontent.com/Orz-3/mini/master/Netease.png
+static=🎵𝐓𝐢𝐤𝐓𝐨𝐤, 🔴负载均衡, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Tiktok.png
 
-available=🇭🇰𝐇𝐊, server-tag-regex=香港|HK, img-url= https://raw.githubusercontent.com/Orz-3/mini/master/HK.png
-available=🇨🇳𝐓𝐖, server-tag-regex=台湾|TW|台, img-url= https://raw.githubusercontent.com/Orz-3/mini/master/TW.png
-available=🇸🇬𝐒𝐆, server-tag-regex=新加坡|SG, img-url= https://raw.githubusercontent.com/Orz-3/mini/master/SG.png
-available=🇰🇷𝐊𝐑, server-tag-regex=韩国|KR, img-url= https://raw.githubusercontent.com/Orz-3/mini/master/KR.png
-available=🇯🇵𝐉𝐏, server-tag-regex=日本|JP, img-url= https://raw.githubusercontent.com/Orz-3/mini/master/JP.png
-available=🇺🇸𝐔𝐒, server-tag-regex=美国|US, img-url= https://raw.githubusercontent.com/Orz-3/mini/master/US.png
+static=🖥𝐍𝐞𝐭𝐟𝐥𝐢𝐱, 🔴负载均衡, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Netflix.png
 
-static=𝐈𝐏𝐋𝐂, server-tag-regex=IPLC|iplc, img-url= https://raw.githubusercontent.com/Orz-3/mini/master/IPLC.png
-static=𝐈𝐄𝐏𝐋, server-tag-regex=IEPL|iepl, img-url= https://raw.githubusercontent.com/Orz-3/mini/master/IEPL.png
-static=𝐆𝐀𝐌𝐄, server-tag-regex=Game|game|游戏, img-url= https://raw.githubusercontent.com/Orz-3/mini/master/Nyancat.png
+static=💳𝐏𝐚𝐲𝐏𝐚𝐥, 🔴负载均衡, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Paypal.png
+
+static=📱𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦, 🔴负载均衡, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Telegram.png
+
+static=🎬𝐘𝐨𝐮𝐓𝐮𝐛𝐞, 🔴负载均衡, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/YouTube-W.png
+
+static=🔞𝐏𝐨𝐫𝐧𝐇𝐮𝐛, 🔴负载均衡, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Pornhub.png
 
 # 网络测速
-static=🚀𝐒𝐩𝐞𝐞𝐝𝐓𝐞𝐬𝐭, 🖲️𝐏𝐫𝐨𝐱𝐲, 🎯𝐃𝐢𝐫𝐞𝐜𝐭, img-url= https://raw.githubusercontent.com/Orz-3/mini/master/Speedtest.png
+static=🚀𝐒𝐩𝐞𝐞𝐝𝐓𝐞𝐬𝐭, 🔴负载均衡, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Speedtest.png
 
 # 苹果服务
-static=🍎𝐀𝐩𝐩𝐥𝐞, 🎯𝐃𝐢𝐫𝐞𝐜𝐭, 🖲️𝐏𝐫𝐨𝐱𝐲, img-url= https://raw.githubusercontent.com/Orz-3/mini/master/Apple.png
+static=🍎𝐀𝐩𝐩𝐥𝐞, direct, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Apple.png
 
 # 广告拦截
-static=🚫𝐀𝐝𝐁𝐥𝐨𝐜𝐤, ⛔️𝐑𝐞𝐣𝐞𝐜𝐭, 🎯𝐃𝐢𝐫𝐞𝐜𝐭, img-url= https://raw.githubusercontent.com/Orz-3/mini/master/Advertising.png
+static=🚫屏蔽广告, reject, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Advertising.png
 
-# 直接连接
-static=🎯𝐃𝐢𝐫𝐞𝐜𝐭, direct, img-url= https://raw.githubusercontent.com/Orz-3/mini/master/direct.png
-
-# 拦截
-static=⛔️𝐑𝐞𝐣𝐞𝐜𝐭, reject, img-url= https://raw.githubusercontent.com/Orz-3/mini/master/reject.png
+static=🕹黑白名单, 🔴负载均衡, direct, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Final.png
 
 #服务器远程订阅
 [server_remote]
-https://dy.v2ray.life/api/, tag=✈️ 𝐀𝐢𝐫𝐩𝐨𝐫𝐭, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/v2raypro.png, update-interval=86400, opt-parser=false, enabled=true
-https://git.io/JfNq3, tag=🎧 𝐍𝐞𝐭𝐞𝐚𝐬𝐞𝐌𝐮𝐬𝐢𝐜, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Netease.png, update-interval=86400, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/hm2019721/GYFX-V2/master/hmGY~V2ray.com, tag=hm~公益V2ray, update-interval=86400, opt-parser=true, enabled=true
+
 #规则分流远程订阅
 [filter_remote]
 # > Direct
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list, force-policy=🎯𝐃𝐢𝐫𝐞𝐜𝐭, tag=𝐋𝐨𝐜𝐚𝐥𝐀𝐫𝐞𝐚, enabled=true, opt-parser=true
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list, force-policy=🎯𝐃𝐢𝐫𝐞𝐜𝐭, tag=𝐔𝐧𝐁𝐚𝐧, enabled=true, opt-parser=true
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list, tag=𝐋𝐨𝐜𝐚𝐥𝐀𝐫𝐞𝐚, force-policy=direct, update-interval=86400, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list, tag=𝐔𝐧𝐁𝐚𝐧, force-policy=direct, update-interval=86400, opt-parser=true, enabled=true
 # > Banlists
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyList.list, force-policy=🚫𝐀𝐝𝐁𝐥𝐨𝐜𝐤, tag=𝐁𝐚𝐧𝐋𝐢𝐬𝐭, enabled=true, opt-parser=true
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyListChina.list, force-policy=🚫𝐀𝐝𝐁𝐥𝐨𝐜𝐤, tag=𝐁𝐚𝐧𝐋𝐢𝐬𝐭𝐂𝐍, enabled=true, opt-parser=true
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyPrivacy.list, force-policy=🚫𝐀𝐝𝐁𝐥𝐨𝐜𝐤, tag=𝐁𝐚𝐧𝐏𝐫𝐢𝐯𝐚𝐜𝐲, enabled=true, opt-parser=true
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list, force-policy=🚫𝐀𝐝𝐁𝐥𝐨𝐜𝐤, tag=𝐁𝐚𝐧𝐀𝐃, enabled=true, opt-parser=true
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list, force-policy=🚫𝐀𝐝𝐁𝐥𝐨𝐜𝐤, tag=𝐁𝐚𝐧𝐏𝐀𝐃, enabled=true, opt-parser=true
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyList.list, tag=𝐁𝐚𝐧𝐋𝐢𝐬𝐭屏蔽广告, force-policy=🚫屏蔽广告, update-interval=86400, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyListChina.list, tag=𝐁𝐚𝐧𝐋𝐢𝐬𝐭𝐂𝐍屏蔽广告, force-policy=🚫屏蔽广告, update-interval=86400, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyPrivacy.list, tag=𝐁𝐚𝐧𝐏𝐫𝐢𝐯𝐚𝐜𝐲屏蔽广告, force-policy=🚫屏蔽广告, update-interval=86400, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list, tag=𝐁𝐚𝐧𝐀𝐃屏蔽广告, force-policy=🚫屏蔽广告, update-interval=86400, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list, tag=𝐁𝐚𝐧𝐏𝐀𝐃屏蔽广告, force-policy=🚫屏蔽广告, update-interval=86400, opt-parser=true, enabled=true
 # > Steam&Epic
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Steam.list, force-policy=🖲️𝐏𝐫𝐨𝐱𝐲, tag=𝐆𝐚𝐦𝐞, enabled=true, opt-parser=true
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Epic.list, force-policy=🖲️𝐏𝐫𝐨𝐱𝐲, tag=𝐆𝐚𝐦𝐞, enabled=true, opt-parser=true
-# > NeteaseMusic
-https://raw.githubusercontent.com/Mazetsz/ACL4SSR/master/Clash/NetEaseCloudMusic.list, force-policy=🎧𝐍𝐞𝐭𝐞𝐚𝐬𝐞𝐌𝐮𝐬𝐢𝐜, tag=𝐍𝐞𝐭𝐞𝐚𝐬𝐞𝐌𝐮𝐬𝐢𝐜, enabled=true, opt-parser=true
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Steam.list, force-policy=🔴负载均衡, tag=𝐆𝐚𝐦𝐞, enabled=true, opt-parser=true
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Epic.list, force-policy=🔴负载均衡, tag=𝐆𝐚𝐦𝐞, enabled=true, opt-parser=true
 # > TikTok
 https://raw.githubusercontent.com/nzw9314/Surge/master/Ruleset/TikTok.list, force-policy=🎵𝐓𝐢𝐤𝐓𝐨𝐤, tag=𝐓𝐢𝐤𝐓𝐨𝐤, enabled=true, opt-parser=true
 # > Youtube
@@ -155,27 +103,26 @@ https://raw.githubusercontent.com/eHpo1/Rules/master/Surge4/Ruleset/Sub/Telegram
 # > PayPal
 https://raw.githubusercontent.com/eHpo1/Rules/master/Surge4/Ruleset/Sub/PayPal.list, force-policy=💳𝐏𝐚𝐲𝐏𝐚𝐥, tag=𝐏𝐚𝐲𝐏𝐚𝐥, enabled=true, opt-parser=true
 # > Outlook、Gmail
-https://raw.githubusercontent.com/nzw9314/Surge/master/Ruleset/Mail.list, force-policy=🖲️𝐏𝐫𝐨𝐱𝐲, tag=𝐌𝐚𝐢𝐥, enabled=true, opt-parser=true
+https://raw.githubusercontent.com/nzw9314/Surge/master/Ruleset/Mail.list, force-policy=🔴负载均衡, tag=𝐌𝐚𝐢𝐥, enabled=true, opt-parser=true
 # > OneDrive
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/OneDrive.list, force-policy=🖲️𝐏𝐫𝐨𝐱𝐲, tag=𝐎𝐧𝐞𝐃𝐫𝐢𝐯𝐞, enabled=true, opt-parser=true
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/OneDrive.list, force-policy=🔴负载均衡, tag=𝐎𝐧𝐞𝐃𝐫𝐢𝐯𝐞, enabled=true, opt-parser=true
 # > Speedtest
 https://raw.githubusercontent.com/eHpo1/Rules/master/Surge4/Ruleset/Sub/Speedtest.list, force-policy=🚀𝐒𝐩𝐞𝐞𝐝𝐓𝐞𝐬𝐭, tag=𝐒𝐩𝐞𝐞𝐝𝐓𝐞𝐬𝐭, enabled=true, opt-parser=true
 https://raw.githubusercontent.com/eHpo1/Rules/master/Surge4/Ruleset/Apple_CDN.list, force-policy=🍎𝐀𝐩𝐩𝐥𝐞, tag=𝐀𝐩𝐩𝐥𝐞_𝐂𝐃𝐍, enabled=true, opt-parser=true
 https://raw.githubusercontent.com/eHpo1/Rules/master/Surge4/Ruleset/Apple_API.list, force-policy=🍎𝐀𝐩𝐩𝐥𝐞, tag=𝐀𝐩𝐩𝐥𝐞_𝐀𝐏𝐈, enabled=true, opt-parser=true
-https://raw.githubusercontent.com/eHpo1/Rules/master/Surge4/Ruleset/AsianMedia.list, force-policy=🌏𝐀𝐬𝐢𝐚𝐧𝐌𝐞𝐝𝐢𝐚, tag=𝐀𝐬𝐢𝐚𝐧𝐌𝐞𝐝𝐢𝐚, enabled=true, opt-parser=true
-https://raw.githubusercontent.com/eHpo1/Rules/master/Surge4/Ruleset/GlobalMedia.list, force-policy=🖲️𝐏𝐫𝐨𝐱𝐲, tag=𝐆𝐥𝐨𝐛𝐚𝐥𝐌𝐞𝐝𝐢𝐚, enabled=true, opt-parser=true
-https://raw.githubusercontent.com/eHpo1/Rules/master/Surge4/Ruleset/Domestic.list, force-policy=🎯𝐃𝐢𝐫𝐞𝐜𝐭, tag=𝐃𝐨𝐦𝐞𝐬𝐭𝐢𝐜, enabled=true, opt-parser=true
-https://raw.githubusercontent.com/eHpo1/Rules/master/Surge4/Ruleset/Global.list, force-policy=🖲️𝐏𝐫𝐨𝐱𝐲, tag=𝐆𝐥𝐨𝐛𝐚𝐥, enabled=true, opt-parser=true
-
-#支持本地/iCloud规则文件，位于Quantumult X/Profiles路径下
-;filter.txt, tag=本地分流, enabled=false
+https://raw.githubusercontent.com/eHpo1/Rules/master/Surge4/Ruleset/AsianMedia.list, tag=𝐀𝐬𝐢𝐚𝐧𝐌𝐞𝐝𝐢𝐚国内视频, force-policy=🌏国内视频, update-interval=86400, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/eHpo1/Rules/master/Surge4/Ruleset/GlobalMedia.list, force-policy=🔴负载均衡, tag=𝐆𝐥𝐨𝐛𝐚𝐥𝐌𝐞𝐝𝐢𝐚, enabled=true, opt-parser=true
+https://raw.githubusercontent.com/eHpo1/Rules/master/Surge4/Ruleset/Domestic.list, tag=𝐃𝐨𝐦𝐞𝐬𝐭𝐢𝐜, force-policy=direct, update-interval=86400, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/eHpo1/Rules/master/Surge4/Ruleset/Global.list, force-policy=🔴负载均衡, tag=𝐆𝐥𝐨𝐛𝐚𝐥, enabled=true, opt-parser=true
 
 #rewrite 复写远程订阅
 [rewrite_remote]
-https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Q-Search_All_in_one.conf, tag=Q-Search, enabled=true
-https://raw.githubusercontent.com/eHpo1/Rules/master/QuantumultX/Rewrite.txt, tag=eHpo1去广告, enabled=true
-https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Js.conf, tag=nzw9314脚本, enabled=true
-https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Get_Cookie_Remote.conf, tag=商店1.06获取Cookie(右滑禁用), enabled=true
+https://raw.githubusercontent.com/hm2019721/GYFX-ZY/master/Q~qga.txt, tag=自己编辑去广告N, update-interval=86400, opt-parser=false, enabled=false
+https://raw.githubusercontent.com/eHpo1/Rules/master/QuantumultX/Rewrite.txt, tag=eHpo1去广告, update-interval=86400, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Q-Search_All_in_one.conf, tag=Q-Search, update-interval=86400, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/hm2019721/GYFX-ZY/master/Q~C.txt, tag=自己添加Cookie, update-interval=86400, opt-parser=true, enabled=false
+https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Js.conf, tag=nzw9314脚本, update-interval=86400, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Get_Cookie_Remote.conf, tag=商店1.06获取Cookie(右滑禁用), update-interval=86400, opt-parser=false, enabled=false
 
 
 # 本地服务器部分
@@ -194,7 +141,7 @@ ip-cidr, 172.16.0.0/12, direct
 ip-cidr, 192.168.0.0/16, direct
 ip-cidr, 224.0.0.0/24, direct
 geoip, cn, direct
-final, 🕹𝐅𝐢𝐧𝐚𝐥
+final, 🕹黑白名单
 
 
 #本地复写规则
@@ -204,38 +151,23 @@ final, 🕹𝐅𝐢𝐧𝐚𝐥
 #google
 ^https?:\/\/(www.)?(g|google)\.cn url 302 https://www.google.com
 
-#Tiktok
-(?<=(carrier|account|sys)_region=)CN url 307 JP
-
+# 美区 Tiktok 1470 解锁
 (.*video_id=\w{32})(.*watermark=)(.*) url 302 $1
-# Tiktok 美区
-(?<=(carrier|account|sys)_region=)CN url 307 JP
-(?<=version_code=)\d{1,}.\d{1}\.\d{1} url 307 16.0.0
-# Tiktok 港区
-# 港区Tiktok将上面的 14.0.0 改为 8.4.0即可
-# Resso
-(?<=(carrier|account|sys|sim)_region=)cn url 307 in
-
-# 解锁B站大会员-圈X规则
-;https:\/\/api\.bilibili\.com\/pgc\/player\/api\/playurl url 302 http://api.bili.best/playurl
-;https:\/\/api.bilibili.com\/pgc\/view\/app\/season url 302 http://api.bili.best/season
+(?<=(carrier|sys)_region=)CN url 307 JP
+(?<=version_code=)\d{1,}.\d{1}\.\d{1} url 307 14.0.0
 
 #以下为证书&主机名部分
 [mitm]
-hostname = *.googlevideo.com,trade-acs.m.taobao.com,
+skip_validating_cert = false
+force_sni_domain_name = false
+hostname = *.googlevideo.com
 
 p12 = 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
 passphrase = BFCFFDDF
 
-;以下模块去掉;才生效
-;请自行在 APP 的UI中生成证书 并安装&信任
-;skip_validating_cert = false
-;force_sni_domain_name = false
-;hostname = *.example.com, *.sample.com
-;passphrase = 
-;p12 = 
 
 [task_local]
+
 ;任务模块，可用于签到,天气话费查询等
 ;js文件放于iCloud或者本机的Quantumult X/Scripts 路径下。TF版本可直接使用远程js链接
 
@@ -640,3 +572,6 @@ passphrase = BFCFFDDF
 
 # Steam价格监控(By Peng-YM)
 0 8 * * * https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tasks/steam.js, tag=Steam价格监控, img-url=https://raw.githubusercontent.com/Orz-3/task/master/steam.png,enabled=true
+
+# 汇率监控(By Peng-YM)
+0 8 * * * https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tasks/exchange.js, tag=汇率监控, img-url=https://raw.githubusercontent.com/Orz-3/task/master/exchangerate.png,enabled=true
