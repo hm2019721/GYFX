@@ -444,11 +444,6 @@ passphrase = BFCFFDDF
 #打开App,访问下右下角 `我的
 2 0 * * * https://raw.githubusercontent.com/NobyDa/Script/master/Bilibili-DailyBonus/Manga.js, tag=哔哩哔哩漫画, img-url=https://raw.githubusercontent.com/Orz-3/task/master/manga.png,enabled=true
 
-# 饿了么   (By @syzzzf)
-#打开 APP, 访问下`我的`>`签到领红包`(左上角)
-3 0 * * * https://raw.githubusercontent.com/songyangzz/QuantumultX/master/elem/elemSign.js, img-url=https://raw.githubusercontent.com/Orz-3/task/master/elem.png,enabled=true
-3 0 * * * https://raw.githubusercontent.com/zZPiglet/Task/master/elem/elemCheckIn.js, tag=饿了么-打卡领红包, img-url=https://raw.githubusercontent.com/Orz-3/task/master/elem.png,enabled=true
-
 # 英雄联盟排名 (By @syzzzf)
 3 0 * * * https://raw.githubusercontent.com/songyangzz/QuantumultX/master/lol.js, tag=英雄联盟排名, img-url=https://raw.githubusercontent.com/Orz-3/task/master/lol.png,enabled=true
 
