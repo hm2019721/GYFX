@@ -1,9 +1,5 @@
-# 更新通知频道(TG • https://t.me/hm2019721)
-# build time: 2020-06-10 04:53:00
-
-# Best Shadowrocket Rules (https://github.com/h2y/Shadowrocket-ADBlock-Rules)
-# by Moshel
-# build time: 2020-07-29 02:33:15
+# 通知频道(电报TG • https://t.me/hm2019721)
+# 最近更新时间: 2020-07-30 01:48:15
 
 [General]
 bypass-system = true
