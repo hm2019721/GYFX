@@ -131,7 +131,6 @@ https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/TIDAL/TIDAL.list, policy=🔰 节点选择, tag=TIDAL, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/TVB/TVB.list, policy=🔰 节点选择, tag=TVB, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/TaiWanGood/TaiWanGood.list, policy=🔰 节点选择, tag=TaiWanGood, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/TeamViewer/TeamViewer.list, policy=🔰 节点选择, tag=TeamViewer, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Telegram/Telegram.list, policy=🔰 节点选择, tag=Telegram, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/TikTok/TikTok.list, policy=🔰 节点选择, tag=TikTok, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Twitter/Twitter.list, policy=🔰 节点选择, tag=Twitter, enabled=true
