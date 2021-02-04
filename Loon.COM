@@ -28,7 +28,7 @@ resource-parser = https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/scr
 *.weixin.com = server:119.28.28.28
 
 [Remote Proxy]
-网络自动抓取线路 = https://hm2019721.herokuapp.com/trojan/sub,parser-enable = true
+网络自动抓取线路 = https://www.hm2019721.ml/trojan/sub,parser-enable = true
 
 
 [Remote Filter]
