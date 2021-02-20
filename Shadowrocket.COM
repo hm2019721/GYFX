@@ -157,7 +157,7 @@ GEOIP,CN,DIRECT
 FINAL,PROXY
 
 [URL Rewrite]
-(?<=_region=)CN(?=&) JP 307
+(?<=_region=)CN(?=&) IT 307
 (?<=&mcc_mnc=)4 2 307
 ^(https?:\/\/dm[\w-]+\.\w+\.com\/.+)(\?)(.+) $1$3 302
 (^https?:\/\/*\.\w{4}okv.com\/.+&.+)(\d{2}\.3\.\d)(.+) $118.0$3 302
